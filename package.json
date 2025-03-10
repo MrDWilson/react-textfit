@@ -1,15 +1,15 @@
 {
   "name": "@wlsn/react-textfit",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React component to fit headlines and paragraphs into any element",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "scripts": {
     "clean": "rimraf lib dist",
     "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublish": "pnpm run test && pnpm run clean && pnpm run build"
+    "prepare": "pnpm run clean && pnpm run build"
   },
   "repository": {
     "type": "git",
