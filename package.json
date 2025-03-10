@@ -1,6 +1,6 @@
 {
   "name": "@wlsn/react-textfit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React component to fit headlines and paragraphs into any element",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -27,6 +27,10 @@
   "bugs": {
     "url": "https://github.com/MrDWilson/react-textfit/issues"
   },
+  "files": [
+    "lib",
+    "README.md"
+  ],
   "homepage": "https://github.com/MrDWilson/react-textfit",
   "devDependencies": {
     "@babel/cli": "^7.26.4",
