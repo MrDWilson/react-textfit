@@ -9,23 +9,27 @@
  * @params {Function} callback(err, results) - An optional callback to run once all the functions have completed. This function gets a results array containing all the result arguments passed to the task callbacks.
  */
 
-import process from 'process';
+type TaskCallback = (err?: any, result?: any) => void;
+type Task = (callback: TaskCallback) => void;
+type SeriesCallback = (err?: any, results?: any[]) => void;
 
-export default function series(tasks, cb) {
-    const results = [];
+export default function series(tasks: Task[], cb?: SeriesCallback): void {
+    const results: any[] = [];
     let current = 0;
     let isSync = true;
 
-    function done(err) {
-        function end() {
+    function done(err?: any): void {
+        function end(): void {
             if (cb) cb(err, results);
         }
-        if (isSync) process.nextTick(end);
+        if (isSync) setTimeout(end, 0);
         else end();
     }
 
-    function each(err, result) {
-        results.push(result);
+    function each(err?: any, result?: any): void {
+        if (result !== undefined) {
+            results.push(result);
+        }
         if (++current >= tasks.length || err) done(err);
         else tasks[current](each);
     }

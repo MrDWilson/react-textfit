@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## v2.0.0
+
+Updated to React 19 and upgraded all dependancies.
+
 ## v1.1.1
 
 Maintenance release.

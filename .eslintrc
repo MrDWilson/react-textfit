@@ -1,25 +1,41 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "env": {
     "browser": true,
-    "mocha": true,
+    "jest": true,
     "node": true
   },
-  "parser": "babel-eslint",
-  "rules": {
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2,
-    "indent": [2, 4, {"SwitchCase": 1}],
-    "comma-dangle": 0,
-    "react/jsx-boolean-value": 0,
-    "react/no-multi-comp": 0,
-    "react/prop-types": 0,
-    "id-length": 0,
-    "no-console": 0,
-    "no-nested-ternary": 0
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
   "plugins": [
-    "react"
-  ]
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/react-in-jsx-scope": "error",
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "comma-dangle": "off",
+    "react/jsx-boolean-value": "off",
+    "react/prop-types": "off",
+    "no-console": "off",
+    "no-nested-ternary": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

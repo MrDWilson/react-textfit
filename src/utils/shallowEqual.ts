@@ -1,4 +1,4 @@
-export default function shallowEqual(objA, objB) {
+export default function shallowEqual(objA: Record<string, any>, objB: Record<string, any>): boolean {
     if (objA === objB) {
         return true;
     }
